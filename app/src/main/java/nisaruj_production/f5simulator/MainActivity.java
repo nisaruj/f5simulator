@@ -14,6 +14,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     public int count=0;
+    public int[] item_count = new int[10];
     //public ProgressBar progress = (ProgressBar)findViewById(R.id.progress);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             count = bundle.getInt("points");
+            item_count = bundle.getIntArray("itemCount");
         }
 
         //Button Declare
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent shop = new Intent(MainActivity.this,shopActivity.class);
                         shop.putExtra("points",count);
+                        shop.putExtra("itemCount",item_count);
                         startActivity(shop);
                         finish();
                     }

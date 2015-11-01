@@ -36,6 +36,15 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/counter"
+        android:layout_alignBottom="@+id/back_button"
+        android:layout_centerHorizontal="true" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,7 +56,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item 1"
+            android:text="Item 1 (10)"
             android:id="@+id/item1"
             android:width="200dp"
             android:layout_marginLeft="27dp"
@@ -63,22 +72,36 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="0"
             android:id="@+id/count1"
+            android:layout_marginLeft="37dp"
+            android:layout_marginStart="37dp"
+            android:gravity="center"
             android:layout_alignBottom="@+id/item1"
             android:layout_toRightOf="@+id/item1"
-            android:layout_toEndOf="@+id/item1"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp" />
+            android:layout_toEndOf="@+id/item1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item 2 (50)"
+            android:id="@+id/item2"
+            android:width="200dp"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/item1"
+            android:layout_toLeftOf="@+id/count1"
+            android:layout_toStartOf="@+id/count1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/count2"
+            android:gravity="center"
+            android:layout_alignBottom="@+id/item2"
+            android:layout_alignLeft="@+id/count1"
+            android:layout_alignStart="@+id/count1" />
 
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="0"
-        android:id="@+id/counter"
-        android:layout_alignBottom="@+id/back_button"
-        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
