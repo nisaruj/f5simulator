@@ -4,7 +4,10 @@
 Project description
 ## Installation
 
-## Usage
+## Features
+Version 0.1
+- Add F5 Button
+- Add Shop 
 
 ## Contributing
 1. Fork it!
