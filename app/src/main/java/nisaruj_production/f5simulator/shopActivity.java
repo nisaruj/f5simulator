@@ -23,9 +23,11 @@ public class shopActivity extends AppCompatActivity {
     };
 
     public int points = 0;
+    public int rate = 0;
 
     public int[] item_count = new int[10];
     public int[] item_price = {10,50};
+    public int[] item_rate = {1,3};
 
     //Update score
     public void setPoints() {
@@ -35,6 +37,9 @@ public class shopActivity extends AppCompatActivity {
         //Set Point
         TextView counter = (TextView)findViewById(R.id.counter);
         counter.setText(String.valueOf(points) + " Points");
+        //Set Rate
+        TextView rate_count = (TextView)findViewById(R.id.rate);
+        rate_count.setText("Rate : " + String.valueOf(rate));
         //Set item counter
         item = new ArrayList<TextView>(BUTTON_IDS.length);
         int i=0;
@@ -49,10 +54,13 @@ public class shopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop_layout);
 
+        for(int i=0;i<10;i++) item_count[i] = 0;
+
         //Pass the values
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             points = bundle.getInt("points");
+            rate = bundle.getInt("rate");
             item_count = bundle.getIntArray("itemCount");
         }
 
@@ -67,6 +75,7 @@ public class shopActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(shopActivity.this, MainActivity.class);
                         intent.putExtra("points", points);
+                        intent.putExtra("rate",rate);
                         intent.putExtra("itemCount", item_count);
                         startActivity(intent);
                         finish();
@@ -80,6 +89,7 @@ public class shopActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if (points >= item_price[0]) {
                             points -= item_price[0];
+                            rate+=item_rate[0];
                             item_count[0]++;
                             setPoints();
                         }
@@ -92,6 +102,7 @@ public class shopActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if (points >= item_price[1]) {
                             points -= item_price[1];
+                            rate+=item_rate[1];
                             item_count[1]++;
                             setPoints();
                         }
