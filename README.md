@@ -8,6 +8,7 @@ Project description
 Version 0.1
 - Add F5 Button
 - Add Shop 
+- Add timer
 
 ## Contributing
 1. Fork it!
