@@ -9,6 +9,11 @@ Version 0.1
 - Add F5 Button
 - Add Shop 
 - Add timer
+ 
+Version 0.2
+- Add F5 Picture
+- Price increases after buy new item **[Equation : Price = base_cost * 1.15 ^ item_count]**
+- Change some code's structure
 
 ## Contributing
 1. Fork it!
