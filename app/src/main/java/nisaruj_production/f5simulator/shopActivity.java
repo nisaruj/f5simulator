@@ -17,20 +17,40 @@ import java.util.List;
 
 public class shopActivity extends AppCompatActivity {
     private List<TextView> item;
-    private static final int[] BUTTON_IDS = {
+
+    private static final int[] TEXT_IDS = {
             R.id.count1,
             R.id.count2
     };
+    private static final int[] BUTTON_IDS = {
+            R.id.item1,
+            R.id.item2
+    };
+
+    private static final int[] BASE_COST = {10,50};
+    private static final int[] item_rate = {1,3};
+    private static final String[] item_name = {"Item 1","Item 2"};
+
+    private static final int ARRAY_SIZE = 2;
 
     public int points = 0;
     public int rate = 0;
 
     public int[] item_count = new int[10];
     public int[] item_price = {10,50};
-    public int[] item_rate = {1,3};
+
+
+
+    //Update items' price
+    private void setPrice() {
+        //Set new price
+        for(int i=0;i<ARRAY_SIZE;i++) item_price[i] = (int) (Math.pow(1.15,item_count[i])*(double)BASE_COST[i]);
+    }
+
 
     //Update score
-    public void setPoints() {
+    private void setPoints() {
+        setPrice();
         //Set Progress
         ProgressBar progress = (ProgressBar)findViewById(R.id.progress);
         progress.setProgress(points);
@@ -41,11 +61,20 @@ public class shopActivity extends AppCompatActivity {
         TextView rate_count = (TextView)findViewById(R.id.rate);
         rate_count.setText("Rate : " + String.valueOf(rate));
         //Set item counter
-        item = new ArrayList<TextView>(BUTTON_IDS.length);
+        item = new ArrayList<TextView>(TEXT_IDS.length);
         int i=0;
-        for(int id : BUTTON_IDS) {
+        for(int id : TEXT_IDS) {
+            if (i >= ARRAY_SIZE) break;
             TextView item_counter = (TextView)findViewById(id);
             item_counter.setText(String.valueOf(item_count[i++]));
+        }
+        //Set button text
+        i=0;
+        for(int id : BUTTON_IDS) {
+            if (i >= ARRAY_SIZE) break;
+            Button button = (Button)findViewById(id);
+            button.setText(item_name[i] + " (" + String.valueOf(item_price[i]) + ")");
+            i++;
         }
     }
 
@@ -54,7 +83,7 @@ public class shopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop_layout);
 
-        for(int i=0;i<10;i++) item_count[i] = 0;
+        for(int i=0;i<ARRAY_SIZE;i++) item_count[i] = 0;
 
         //Pass the values
         Bundle bundle = getIntent().getExtras();
@@ -84,6 +113,7 @@ public class shopActivity extends AppCompatActivity {
                 }
         );
 
+        //Item 1
         item1.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.view.View;
@@ -55,13 +56,14 @@ public class MainActivity extends AppCompatActivity {
         else if (rate < 10000) interval = 100000/rate;
 
         //Button Declare
-        Button button = (Button)findViewById(R.id.button);
+        ImageButton button = (ImageButton)findViewById(R.id.button);
         Button shop_button = (Button)findViewById(R.id.button_shop);
+
 
         setPoints();
 
         button.setOnClickListener(
-                new Button.OnClickListener() {
+                new ImageButton.OnClickListener() {
                     public void onClick(View v) { //On click
                         count++;
                         setPoints();
