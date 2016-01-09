@@ -12,26 +12,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
 
-    <ImageButton android:id="@+id/button"
-        android:background="@null"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:height="200dp"
-        android:width="175dp"
-        android:padding="0dip"
-        android:src="@drawable/f5_key"
-        android:scaleType="fitCenter"
-        android:layout_alignTop="@+id/progress"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="50dp" />
-
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:id="@+id/progress"
-        android:max="1000"
+        android:max="100000"
         android:maxWidth="500dp"
 
         android:indeterminate="false"
@@ -69,6 +55,29 @@
         android:layout_alignBottom="@+id/button_shop"
         android:layout_alignLeft="@+id/progress"
         android:layout_alignStart="@+id/progress" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/progress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="52dp">
+
+        <ImageButton android:id="@+id/button"
+            android:background="@null"
+            android:layout_width="270dp"
+            android:layout_height="250dp"
+            android:height="100dp"
+            android:width="150dp"
+            android:padding="0dip"
+            android:src="@drawable/f5_key"
+            android:scaleType="fitCenter"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
 
 </RelativeLayout>

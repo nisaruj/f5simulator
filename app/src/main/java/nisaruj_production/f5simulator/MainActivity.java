@@ -18,10 +18,14 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     public int count=0;
-    public int rate=0;
+    public double rate=0;
     public int interval = 1000;
     public int[] item_count = new int[10];
-    public int[] item_rate = {1,3};
+
+    //Round number to 2 decimal place
+    private double round_to_2nd(double num) {
+        return Math.round(num * 100.0)/100.0;
+    }
 
     //Update score
     public void setPoints() {
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         counter.setText(String.valueOf(count) + " Points");
         //Set Rate
         TextView rate_count = (TextView)findViewById(R.id.rate);
-        rate_count.setText("Rate : " + String.valueOf(rate));
+        rate_count.setText("Rate : " + String.valueOf(round_to_2nd(rate)));
     }
 
     @Override
@@ -46,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (bundle != null) {
             count = bundle.getInt("points");
-            rate = bundle.getInt("rate");
+            rate = bundle.getDouble("rate");
             item_count = bundle.getIntArray("itemCount");
 
         }
         if (rate == 0) interval = 0;
-        else if (rate < 100)interval = 1000/rate;
-        else if (rate < 1000) interval = 10000/rate;
-        else if (rate < 10000) interval = 100000/rate;
+        else if (rate < 100)interval = (int)(1000/rate);
+        else if (rate < 1000) interval = (int)(10000/rate);
+        else if (rate < 10000) interval = (int)(100000/rate);
 
         //Button Declare
         ImageButton button = (ImageButton)findViewById(R.id.button);

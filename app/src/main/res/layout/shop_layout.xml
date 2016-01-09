@@ -15,14 +15,14 @@
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:id="@+id/progress"
         android:max="1000"
         android:maxWidth="500dp"
 
         android:indeterminate="false"
         android:progress="0"
-        android:maxHeight="200dp"
+        android:maxHeight="100dp"
         android:layout_marginTop="41dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
@@ -59,10 +59,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/relativeLayout"
         android:layout_below="@+id/progress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/relativeLayout">
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView">
 
         <Button
             android:layout_width="wrap_content"
@@ -111,8 +111,52 @@
             android:layout_alignRight="@+id/count1"
             android:layout_alignEnd="@+id/count1" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item 3 (100)"
+            android:id="@+id/item3"
+            android:width="200dp"
+            android:layout_below="@+id/count2"
+            android:layout_alignLeft="@+id/item2"
+            android:layout_alignStart="@+id/item2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/count3"
+            android:gravity="center"
+            android:layout_alignBottom="@+id/item3"
+            android:layout_alignLeft="@+id/count2"
+            android:layout_alignStart="@+id/count2" />
+
 
     </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/relativeLayout">
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info"
+            android:background="@null"
+            android:id="@+id/infoButton"
+            android:layout_gravity="left|top"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/rate"
+            android:layout_toStartOf="@+id/rate"
+            android:layout_marginRight="72dp"
+            android:layout_marginEnd="72dp" />
+    </FrameLayout>
 
 
 </RelativeLayout>
