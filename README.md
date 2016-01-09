@@ -15,6 +15,11 @@ Version 0.2
 - Price increases after buy new item **[Equation : Price = base_cost * 1.15 ^ item_count]**
 - Change some code's structure
 
+Version 0.3
+- Add info button
+- New item
+
+
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
