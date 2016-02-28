@@ -18,29 +18,33 @@ import java.util.List;
 public class shopActivity extends AppCompatActivity {
     private List<TextView> item;
 
-    private static final int[] TEXT_IDS = {
-            R.id.count1,
-            R.id.count2,
-            R.id.count3
-    };
-    private static final int[] BUTTON_IDS = {
-            R.id.item1,
-            R.id.item2,
-            R.id.item3
-    };
+    /** EDIT THESE LINE WHEN CREATE NEW ITEM! */
 
-    private static final int[] BASE_COST = {10,50,100};
-    private static final double[] item_rate = {0.1,0.5,1};
-    private static final String[] item_name = {"Auto-Reload","Item 2","Item 3"};
+         private static final int ARRAY_SIZE = 3;     //Number of items
 
-    /** Item List
+         private static final int[] TEXT_IDS = {         //Label declare
+                 R.id.count1,
+                 R.id.count2,
+                 R.id.count3
+         };
+         private static final int[] BUTTON_IDS = {       //Button declare
+                 R.id.item1,
+                 R.id.item2,
+                 R.id.item3
+         };
+
+         private static final int[] BASE_COST = {10,50,100};
+         private static final double[] item_rate = {0.1,0.5,1};
+         private static final String[] item_name = {"Auto-Reload","Item 2","Item 3"};
+
+    /**END OF LINE */
+
+    /* Item List
         - Auto-Reload
         - Computer
         - น้ำมนต์
         - วันหยุด
      */
-
-    private static final int ARRAY_SIZE = 3;
 
     public int points = 0;
     public double rate = 0.0;
