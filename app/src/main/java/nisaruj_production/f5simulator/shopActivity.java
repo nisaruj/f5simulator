@@ -20,22 +20,24 @@ public class shopActivity extends AppCompatActivity {
 
     /** EDIT THESE LINE WHEN CREATE NEW ITEM! */
 
-         private static final int ARRAY_SIZE = 3;     //Number of items
+         private static final int ARRAY_SIZE = 4;     //Number of items
 
          private static final int[] TEXT_IDS = {         //Label declare
                  R.id.count1,
                  R.id.count2,
-                 R.id.count3
+                 R.id.count3,
+                 R,id count4
          };
          private static final int[] BUTTON_IDS = {       //Button declare
                  R.id.item1,
                  R.id.item2,
-                 R.id.item3
+                 R.id.item3,
+                 R.id.item4
          };
 
-         private static final int[] BASE_COST = {10,50,100};
-         private static final double[] item_rate = {0.1,0.5,1};
-         private static final String[] item_name = {"Auto-Reload","Item 2","Item 3"};
+         private static final int[] BASE_COST = {10,50,100,200};
+         private static final double[] item_rate = {0.1,0.5,1,1;
+         private static final String[] item_name = {"Auto-Reload","Computer","Holy Water","Vacation"};
 
     /**END OF LINE */
 
@@ -50,7 +52,7 @@ public class shopActivity extends AppCompatActivity {
     public double rate = 0.0;
 
     public int[] item_count = new int[10];
-    public int[] item_price = {10,50,100};
+    public int[] item_price = {10,50,100,200};
 
 
 
@@ -119,6 +121,7 @@ public class shopActivity extends AppCompatActivity {
         Button item1 = (Button)findViewById(R.id.item1);
         Button item2 = (Button)findViewById(R.id.item2);
         Button item3 = (Button)findViewById(R.id.item3);
+        Button item4 = (Button)findViewById(R.id.item4);
 
         back_button.setOnClickListener(
                 new Button.OnClickListener() {
@@ -173,6 +176,18 @@ public class shopActivity extends AppCompatActivity {
                     }
                 }
         );
+        //item 4 Vacation
+         item4.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        if (points >= item_price[3]) {
+                            points -= item_price[3];
+                            rate+=item_rate[3];
+                            item_count[3]++;
+                            setPoints();
+                        }
+                    }
+                }
 
     }
 
