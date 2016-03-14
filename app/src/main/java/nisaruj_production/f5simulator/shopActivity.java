@@ -26,7 +26,7 @@ public class shopActivity extends AppCompatActivity {
                  R.id.count1,
                  R.id.count2,
                  R.id.count3,
-                 R,id count4
+                 R.id.count4
          };
          private static final int[] BUTTON_IDS = {       //Button declare
                  R.id.item1,
@@ -36,8 +36,8 @@ public class shopActivity extends AppCompatActivity {
          };
 
          private static final int[] BASE_COST = {10,50,100,200};
-         private static final double[] item_rate = {0.1,0.5,1,1;
-         private static final String[] item_name = {"Auto-Reload","Computer","Holy Water","Vacation"};
+         private static final double[] item_rate = {0.1,0.5,1,1};
+         private static final String[] item_name = {"Auto-Reload","Computer","Vacation","Vacation"};
 
     /**END OF LINE */
 
@@ -188,9 +188,8 @@ public class shopActivity extends AppCompatActivity {
                         }
                     }
                 }
+         );
 
     }
-
-
 
 }
