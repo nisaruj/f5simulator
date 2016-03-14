@@ -67,7 +67,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item 1 (10)"
+            android:text="Auto-Reload (10)"
             android:id="@+id/item1"
             android:width="200dp"
             android:layout_marginLeft="27dp"
@@ -93,7 +93,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item 2 (50)"
+            android:text="Computer (50)"
             android:id="@+id/item2"
             android:width="200dp"
             android:layout_below="@+id/item1"
@@ -114,7 +114,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item 3 (100)"
+            android:text="Vacation (100)"
             android:id="@+id/item3"
             android:width="200dp"
             android:layout_below="@+id/count2"
@@ -130,7 +130,24 @@
             android:gravity="center"
             android:layout_alignBottom="@+id/item3"
             android:layout_alignLeft="@+id/count2"
-            android:layout_alignStart="@+id/count2" />
+            android:layout_alignStart="@+id/count2" /><Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vacation (200)"
+            android:id="@+id/item4"
+            android:width="200dp"
+            android:layout_below="@+id/count3"
+            android:layout_alignLeft="@+id/item3"
+            android:layout_alignStart="@+id/item3" /><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/count4"
+            android:gravity="center"
+            android:layout_alignBottom="@+id/item4"
+            android:layout_alignLeft="@+id/count3"
+            android:layout_alignStart="@+id/count3" />
 
 
     </RelativeLayout>
